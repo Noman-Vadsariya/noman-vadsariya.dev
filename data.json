@@ -1,0 +1,105 @@
+{
+  "name": "Noman Nooruddin Vadsariya",
+  "role": "AI/ML Engineer & Software Engineer",
+  "location": "Los Angeles, CA",
+  "email": "noman.nooruddin02@gmail.com",
+  "phone": "(323) 405-5450",
+  "linkedin": "https://linkedin.com/in/noman-vadsariya",
+  "github": "https://github.com/yourgithub",
+  "photo": "avatar.jpg",
+
+  "summary": "Graduate student in Computer Science at USC focusing on AI and scalable ML systems. Previously worked as a Software Engineer at Securiti.ai, handling large-scale structured and unstructured data for content classification, and as an AI R&D intern at Motive, building automated ML pipelines and real-time AI systems with RAG workflows. Seeking a Summer 2026 internship to apply ML expertise to impactful, large-scale projects.",
+
+  "experiences": [
+    {
+      "title": "Software Engineer II, Content Classification",
+      "company": "Securiti.ai",
+      "location": "California",
+      "period": "June 2023 – Aug 2025",
+      "highlights": [
+        "Enhanced backend performance by 15% through refactoring RESTful APIs in Go and optimizing PostgreSQL/Elasticsearch queries.",
+        "Designed and deployed scalable microservices with asynchronous workers for data export, scanning, and classification.",
+        "Built LLM-powered Agentic AI automation and Validation Workbench with RAG pipelines to improve classifier accuracy.",
+        "Applied data-driven methods (inspired by FEA concepts) to stress-test system robustness on large-scale datasets."
+      ]
+    },
+    {
+      "title": "Artificial Intelligence Intern, AI R&D",
+      "company": "Motive",
+      "location": "Pakistan",
+      "period": "June 2022 – Sept 2022",
+      "highlights": [
+        "Built 20+ FastAPI/Flask APIs for real-time dashcam AI, cutting latency by 30%.",
+        "Architected end-to-end MLOps pipelines using Apache Airflow and Kubeflow for automated model retraining/deployment."
+      ]
+    },
+    {
+      "title": "Data Structures Teaching Assistant",
+      "company": "NUCES",
+      "location": "Pakistan",
+      "period": "Aug 2022 – Jan 2023",
+      "highlights": [
+        "Taught core data structures in Java to 50+ students.",
+        "Mentored students through labs and office hours."
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Dense Video Captioning",
+      "tech": ["PyTorch", "NLP", "Computer Vision", "Transformers"],
+      "image": "projects/video-captioning.jpg",
+      "description": "Built an end-to-end dense video captioning pipeline using Python, OpenCV, and PyTorch. Trained a transformer with temporal attention, improving BLEU score by 12%. Applications: automated indexing, video summarization, accessibility."
+    },
+    {
+      "title": "Credit Risk & Fraud Detection",
+      "tech": ["TensorFlow", "RAG", "Kafka", "Gradient Boosting"],
+      "image": "projects/fraud-detection.jpg",
+      "description": "Trained gradient boosting and transformer models on 100K+ records (91% precision). Built real-time scoring system with Flask + Kafka and RAG for explainability."
+    },
+    {
+      "title": "Cross-Platform Sentiment Analysis",
+      "tech": ["BERT", "TensorFlow", "Web Scraping", "Flask"],
+      "image": "projects/sentiment-analysis.png",
+      "description": "Crawled 100K+ reviews from IMDB/Twitter/Rotten Tomatoes. Fine-tuned BERT in TensorFlow and deployed real-time Flask API with sentiment trend visualization."
+    },
+    {
+      "title": "Khudmadad Freelancing Platform",
+      "tech": [".NET", "C#", "React", "PostgreSQL"],
+      "image": "projects/khudmadad.png",
+      "description": "Full-stack freelancing web app with .NET backend, React frontend, and real-time messaging. Plugin with 2K+ downloads and 4/5-star rating."
+    }
+  ],
+
+  "awards": [
+    "Viterbi Graduate Scholarship – USC (2025–2026)",
+    "Aga Khan Foundation International Scholar",
+    "Rector’s List (5x) – Perfect 4.0 GPA",
+    "Dean’s List (3x)"
+  ],
+
+  "education": [
+    {
+      "degree": "MS in Computer Science (AI)",
+      "school": "University of Southern California",
+      "location": "Los Angeles, CA",
+      "period": "2025 – 2027",
+      "coursework": ["AI", "ML", "Deep Learning", "NLP", "Information Retrieval"]
+    },
+    {
+      "degree": "BS in Computer Science",
+      "school": "National University of Computer and Emerging Sciences (NUCES)",
+      "location": "Karachi, Pakistan",
+      "period": "2019 – 2023",
+      "coursework": ["Data Structures", "Algorithms", "DBMS", "OS", "Networking"],
+      "gpa": "3.95/4.0"
+    }
+  ],
+
+  "skills": [
+    "Python", "Go", "PyTorch", "TensorFlow", "LLMs", "RAG", "FastAPI", "Flask",
+    ".NET", "React", "Docker", "Kubernetes", "AWS", "PostgreSQL", "Elasticsearch",
+    "MLOps", "Airflow", "Kubeflow", "Git", "CI/CD"
+  ]
+}
