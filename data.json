@@ -3,9 +3,9 @@
   "role": "AI/ML Engineer & Software Engineer",
   "location": "Los Angeles, CA",
   "email": "noman.nooruddin02@gmail.com",
-  "phone": "(323) 405-5450",
+  "phone": "+13234055450",
   "linkedin": "https://linkedin.com/in/noman-vadsariya",
-  "github": "https://github.com/yourgithub",
+  "github": "https://github.com/Noman-Vadsariya?tab=repositories",
   "photo": "avatar.jpg",
 
   "summary": "Graduate student in Computer Science at USC focusing on AI and scalable ML systems. Previously worked as a Software Engineer at Securiti.ai, handling large-scale structured and unstructured data for content classification, and as an AI R&D intern at Motive, building automated ML pipelines and real-time AI systems with RAG workflows. Seeking a Summer 2026 internship to apply ML expertise to impactful, large-scale projects.",
@@ -17,10 +17,7 @@
       "location": "California",
       "period": "June 2023 – Aug 2025",
       "highlights": [
-        "Enhanced backend performance by 15% through refactoring RESTful APIs in Go and optimizing PostgreSQL/Elasticsearch queries.",
-        "Designed and deployed scalable microservices with asynchronous workers for data export, scanning, and classification.",
-        "Built LLM-powered Agentic AI automation and Validation Workbench with RAG pipelines to improve classifier accuracy.",
-        "Applied data-driven methods (inspired by FEA concepts) to stress-test system robustness on large-scale datasets."
+        ""
       ]
     },
     {
