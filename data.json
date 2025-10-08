@@ -1,43 +1,49 @@
 {
   "name": "Noman Nooruddin Vadsariya",
-  "role": "AI/ML Engineer & Software Engineer",
-  "location": "Los Angeles, CA",
+  "title": "AI Engineer & Full-Stack Developer",
+  "summary": "Graduate student in Computer Science at USC focusing on AI and scalable ML systems. Previously worked as a Software Engineer at Securiti.ai, handling large-scale structured and unstructured data for content classification, and as an AI R&D intern at Motive, building automated ML pipelines and real-time AI systems with RAG workflows.",
   "email": "noman.nooruddin02@gmail.com",
   "phone": "+13234055450",
   "linkedin": "https://linkedin.com/in/noman-vadsariya",
-  "github": "https://github.com/Noman-Vadsariya?tab=repositories",
-  "photo": "avatar.jpg",
+  "github": "https://github.com/nomanvadsariya",
 
-  "summary": "Graduate student in Computer Science at USC focusing on AI and scalable ML systems. Previously worked as a Software Engineer at Securiti.ai, handling large-scale structured and unstructured data for content classification, and as an AI R&D intern at Motive, building automated ML pipelines and real-time AI systems with RAG workflows. Seeking a Summer 2026 internship to apply ML expertise to impactful, large-scale projects.",
-
-  "experiences": [
+  "experience": [
     {
-      "title": "Software Engineer II, Content Classification",
+      "role": "Software Engineer II – Content Classification",
       "company": "Securiti.ai",
       "location": "California",
       "period": "June 2023 – Aug 2025",
       "highlights": [
-        ""
+        "Enhanced backend performance by 15% by developing and refactoring RESTful APIs in Go, and optimizing PostgreSQL and Elasticsearch queries to handle large-scale data efficiently.",
+        "Designed and deployed scalable microservices with asynchronous workers for data export, scanning, and classification, which increased system throughput and reliability under heavy workloads.",
+        "Led the development of content classification features, including the Validation Workbench and Agentic AI automation, enabling systematic tuning, validation, and monitoring of classifier results, improving accuracy and consistency across datasets.",
+        "Took ownership of testing across multiple features, implementing unit, performance, and integration tests to ensure robust production deployments.",
+        "Collaborated with cross-functional teams to define feature requirements, troubleshoot complex bugs, and optimize service reliability for enterprise-level clients.",
+        "Conducted performance benchmarking and profiling to identify bottlenecks, applying caching strategies and query optimizations that reduced latency in high-volume pipelines."
       ]
     },
     {
-      "title": "Artificial Intelligence Intern, AI R&D",
+      "role": "AI Research Intern – AI R&D",
       "company": "Motive",
       "location": "Pakistan",
       "period": "June 2022 – Sept 2022",
       "highlights": [
-        "Built 20+ FastAPI/Flask APIs for real-time dashcam AI, cutting latency by 30%.",
-        "Architected end-to-end MLOps pipelines using Apache Airflow and Kubeflow for automated model retraining/deployment."
+        "Built and optimized 20+ RESTful APIs using FastAPI and Flask to serve real-time dashcam AI inferences, reducing latency by 30% and improving response times for AI-driven applications.",
+        "Architected end-to-end MLOps pipelines using Apache Airflow for orchestration and Kubeflow for model training and deployment, automating retraining workflows for three core AI models.",
+        "Collaborated with data scientists and engineers to implement real-time monitoring, logging, and alerting for deployed AI models, ensuring reliability and maintainability.",
+        "Developed automated model evaluation pipelines to track performance metrics across Dev, QA, and Production environments, enabling continuous improvement."
       ]
     },
     {
-      "title": "Data Structures Teaching Assistant",
-      "company": "NUCES",
+      "role": "Teaching Assistant – Data Structures",
+      "company": "National University of Computer and Emerging Sciences (NUCES)",
       "location": "Pakistan",
       "period": "Aug 2022 – Jan 2023",
       "highlights": [
-        "Taught core data structures in Java to 50+ students.",
-        "Mentored students through labs and office hours."
+        "Delivered lectures and guided students on core data structures, algorithm design, and problem-solving in Java.",
+        "Mentored 50+ students through hands-on labs and office hours, improving understanding of recursion, tree/graph algorithms, and dynamic programming.",
+        "Assisted in grading assignments, reviewing code for efficiency and correctness, and providing actionable feedback to enhance coding proficiency.",
+        "Organized workshops on advanced algorithmic techniques, helping students bridge theoretical concepts with practical implementation."
       ]
     }
   ],
@@ -45,58 +51,107 @@
   "projects": [
     {
       "title": "Dense Video Captioning",
-      "tech": ["PyTorch", "NLP", "Computer Vision", "Transformers"],
-      "image": "projects/video-captioning.jpg",
-      "description": "Built an end-to-end dense video captioning pipeline using Python, OpenCV, and PyTorch. Trained a transformer with temporal attention, improving BLEU score by 12%. Applications: automated indexing, video summarization, accessibility."
-    },
-    {
-      "title": "Credit Risk & Fraud Detection",
-      "tech": ["TensorFlow", "RAG", "Kafka", "Gradient Boosting"],
-      "image": "projects/fraud-detection.jpg",
-      "description": "Trained gradient boosting and transformer models on 100K+ records (91% precision). Built real-time scoring system with Flask + Kafka and RAG for explainability."
-    },
-    {
-      "title": "Cross-Platform Sentiment Analysis",
-      "tech": ["BERT", "TensorFlow", "Web Scraping", "Flask"],
-      "image": "projects/sentiment-analysis.png",
-      "description": "Crawled 100K+ reviews from IMDB/Twitter/Rotten Tomatoes. Fine-tuned BERT in TensorFlow and deployed real-time Flask API with sentiment trend visualization."
+      "tags": ["ML", "NLP", "CV", "PyTorch", "OpenCV", "Transformers"],
+      "period": "Aug 2022 – May 2023",
+      "description": "Built an end-to-end pipeline to generate timestamped captions for long-form video content. The system uses OpenCV for video frame extraction, PyTorch for a transformer-based sequence-to-sequence model, and temporal attention to focus on relevant video segments.",
+      "impact": [
+        "Improved content accessibility by providing context-rich captions, making videos usable for automated indexing, summarization, and for users with hearing impairments.",
+        "Generated highly accurate captions that increased BLEU score by 12%, improving automated content understanding for large datasets."
+      ],
+      "learnings": [
+        "Gained experience in temporal modeling, transformer architectures, and handling large video datasets efficiently.",
+        "Learned the importance of data preprocessing, temporal alignment, and robust evaluation metrics for video understanding tasks.",
+        "Understood the challenges of integrating machine learning models into end-to-end production pipelines."
+      ],
+      "links": [
+        { "label": "GitHub", "url": "https://drive.google.com/file/d/1iec2yEQamZNrXkJvvRBdMjsCwa3jfwzq/view?usp=sharing" }
+      ]
     },
     {
       "title": "Khudmadad Freelancing Platform",
-      "tech": [".NET", "C#", "React", "PostgreSQL"],
-      "image": "projects/khudmadad.png",
-      "description": "Full-stack freelancing web app with .NET backend, React frontend, and real-time messaging. Plugin with 2K+ downloads and 4/5-star rating."
+      "tags": [".NET", "React.js", "Full-Stack", "Real-time Messaging", "PostgreSQL"],
+      "period": "Jan 2022 – May 2022",
+      "description": "Developed a full-stack freelancing web app using .NET backend, React frontend, and PostgreSQL database. Implemented secure APIs, real-time messaging, and role-based access control. Deployed a plugin for external websites to expand accessibility.",
+      "impact": [
+        "Platform successfully facilitated user interaction between freelancers and clients.",
+        "The plugin gained 2,000+ downloads and an average rating of 4/5 stars, demonstrating adoption and usability."
+      ],
+      "learnings": [
+        "Strengthened understanding of full-stack development, API design, and user authentication/authorization.",
+        "Learned to handle real-time communication, data consistency, and error handling in production systems.",
+        "Understood deployment challenges and importance of CI/CD pipelines for reliability."
+      ],
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/Noman-Vadsariya/DDR-Khudmadad" }
+      ]
+    },
+    {
+      "title": "Credit Risk Prediction & Fraud Detection",
+      "tags": ["ML", "TensorFlow", "Kafka", "RAG", "Gradient Boosting"],
+      "period": "Aug 2022 – Jan 2023",
+      "description": "Built a dataset of 100,000+ loan applications and transactions. Trained gradient boosting and transformer-based models in TensorFlow to predict credit risk and detect fraud. Deployed a real-time scoring system using Flask and Kafka.",
+      "impact": [
+        "Improved risk detection in loan processing with 91% precision and 87% recall.",
+        "Real-time predictions helped decision-making teams act faster, reducing potential financial losses."
+      ],
+      "learnings": [
+        "Learned the practical application of RAG workflows to integrate historical data for explainable AI.",
+        "Understood challenges in handling imbalanced datasets, feature engineering, and maintaining production-ready ML pipelines.",
+        "Strengthened skills in distributed inference and real-time system integration."
+      ],
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nomanvadsariya/credit-risk-ml" }
+      ]
+    },
+    {
+      "title": "Cross-Platform Sentiment Analysis of Movie Reviews",
+      "tags": ["NLP", "TensorFlow", "BERT", "Web Scraping", "Flask"],
+      "period": "Jan 2022 – May 2022",
+      "description": "Collected reviews from IMDB, Rotten Tomatoes, and Twitter, preprocessed text, and trained BERT-based transformer models for sentiment classification. Deployed a real-time inference system using Flask to visualize sentiment trends.",
+      "impact": [
+        "Provided real-time insights on sentiment trends across multiple platforms, enabling better analysis for media or marketing purposes.",
+        "Showcased ability to scale NLP models for diverse and noisy datasets."
+      ],
+      "learnings": [
+        "Gained expertise in transformer fine-tuning, text preprocessing, and handling cross-platform textual data.",
+        "Learned best practices for deploying NLP models in a lightweight, real-time environment.",
+        "Understood trade-offs between model size, accuracy, and inference speed for production use."
+      ],
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nomanvadsariya/sentiment-analysis" }
+      ]
     }
   ],
 
   "awards": [
-    "Viterbi Graduate Scholarship – USC (2025–2026)",
-    "Aga Khan Foundation International Scholar",
-    "Rector’s List (5x) – Perfect 4.0 GPA",
-    "Dean’s List (3x)"
+    "Viterbi Graduate Scholarship – Merit-based award for academic year 2025-26",
+    "Aga Khan Foundation International Scholar - Prestigious global award for master’s studies at USC",
+    "Rector’s List (5x) – Awarded for achieving a perfect semester GPA of 4.0/4.0 across five semesters",
+    "Dean’s List (3x) - Awarded for achieving a perfect semester GPA of over 3.7/4.0 across three semesters"
   ],
 
   "education": [
     {
       "degree": "MS in Computer Science (AI)",
       "school": "University of Southern California",
-      "location": "Los Angeles, CA",
+      "location": "Los Angeles, California, United States",
       "period": "2025 – 2027",
-      "coursework": ["AI", "ML", "Deep Learning", "NLP", "Information Retrieval"]
+      "coursework": ["Algorithms", "Information Retrieval"]
     },
     {
       "degree": "BS in Computer Science",
-      "school": "National University of Computer and Emerging Sciences (NUCES)",
+      "school": "NUCES",
       "location": "Karachi, Pakistan",
       "period": "2019 – 2023",
-      "coursework": ["Data Structures", "Algorithms", "DBMS", "OS", "Networking"],
-      "gpa": "3.95/4.0"
+      "gpa": "3.95/4.0",
+      "coursework": ["Data Structures", "Algorithms", "DBMS", "OS", "Networking", "Artificial Intelligence", "Machine Learning", "Information Retrieval", "Deep Learning"]
     }
   ],
 
-  "skills": [
-    "Python", "Go", "PyTorch", "TensorFlow", "LLMs", "RAG", "FastAPI", "Flask",
-    ".NET", "React", "Docker", "Kubernetes", "AWS", "PostgreSQL", "Elasticsearch",
-    "MLOps", "Airflow", "Kubeflow", "Git", "CI/CD"
-  ]
+  "skills": {
+    "Languages & Frameworks": ["Go", "Python", "JavaScript/TypeScript", "C#", "React", ".NET", "FastAPI", "Flask"],
+    "AI & Machine Learning": ["LLMs", "RAG", "Transformers", "BERT", "PyTorch", "TensorFlow", "Scikit-learn", "MLOps"],
+    "Data & Systems": ["PostgreSQL", "Elasticsearch", "Kafka", "Redis", "Airflow", "Kubeflow", "Docker", "Kubernetes"],
+    "Concepts & Practices": ["RESTful APIs", "Microservices", "CI/CD", "Async Workers", "Real-time Systems", "Model Evaluation", "Data Preprocessing"]
+  }
 }
