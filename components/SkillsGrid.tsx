@@ -156,9 +156,6 @@ export function SkillsGrid() {
                     {theme.label}
                   </h3>
                 </div>
-                <div className="font-mono text-[11px] uppercase tracking-widest text-fg-subtle">
-                  {items.length} items
-                </div>
               </div>
 
               <div className="mt-4 flex flex-wrap gap-1.5">

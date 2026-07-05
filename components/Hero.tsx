@@ -3,7 +3,7 @@ import { profile } from "@/content/profile";
 
 const affiliations = [
   { label: "USC", tone: "current" as const },
-  { label: "Veeam Software", tone: "current" as const },
+  { label: "Veeam", tone: "current" as const },
   { label: "USC ATRI", tone: "current" as const },
   { label: "ex-Securiti.ai", tone: "past" as const },
   { label: "ex-Motive", tone: "past" as const },

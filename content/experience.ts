@@ -3,10 +3,10 @@ import type { Experience } from "./types";
 export const experience: Experience[] = [
   {
     role: "Software Engineer Intern",
-    company: "Veeam Software",
+    company: "Veeam",
     location: "San Jose, California",
     period: "Jun 2026 – Aug 2026",
-    disciplines: ["SWE", "Data-Eng"],
+    disciplines: ["SWE", "ML", "Data-Eng"],
     highlights: [
      "Prototyped full-text indexing in Databricks, improving search performance for large-scale string queries",
      "Ran a comparative analysis of LanceDB, Elasticsearch, and OpenSearch for vector search workloads, identifying a storage/compute-separated architecture that can cut compute costs by up to 60%"
@@ -16,8 +16,8 @@ export const experience: Experience[] = [
     role: "Software Engineer Intern, Informatics Team",
     company: "USC Alzheimer's Therapeutic Research Institute",
     location: "San Diego, California (Remote)",
-    period: "Jun 2023 – Aug 2025",
-    disciplines: ["SWE", "Data-Eng"],
+    period: "Dec 2025 – Present",
+    disciplines: ["SWE"],
     highlights: [
       "Built a unified data aggregation layer across recording runs, instruments, and specimen types, cutting manual analysis effort by 30%+",
       "Implemented fine-grained RBAC and a centralized permission matrix across backend and frontend",
@@ -25,20 +25,22 @@ export const experience: Experience[] = [
     ],
   },
   {
-    role: "Software Engineer II — Content Classification",
+    role: "Software Engineer II, Content Classification Team",
     company: "Securiti.ai",
     location: "California",
     period: "Jun 2023 – Aug 2025",
     disciplines: ["SWE", "Data-Eng"],
     highlights: [
-      "Architected Go-based microservices for enterprise data privacy workflows handling 15M+ files, reducing API latency by 15%",
-      "Built the Validation Workbench and an agentic AI automation system for classifier tuning, improving classification accuracy",
-      "Designed async processing pipelines that increased data export/classification throughput by 40%",
-      "Containerized CI/CD across 10+ services (Jenkins, Docker), cutting deployment time by 35%",
+      "Architected and optimized Go-based RESTful microservices powering enterprise data privacy workflows handling datasets exceeding 15M+ files, reducing API latency by 15% in production environments",
+      "Designed and deployed asynchronous processing pipelines and scalable background workers, increasing large-scale data export and classification throughput by 40%",
+      "Built the Validation Workbench and agentic AI automation system for classifier tuning, improving classification accuracy and reducing manual configuration effort",
+      "Integrated structured error logging and Slack-based pipeline alerts, reducing incident response time by 30%",
+      "Containerized CI/CD pipelines using Jenkins and Docker across 10+ services, reducing deployment time by 35%",
+      "Built unit, performance, and integration tests, reducing production bugs by 25% and ensuring stable deployments",
     ],
   },
   {
-    role: "AI Research Intern — AI R&D",
+    role: "AI Research Intern, AI R&D Team",
     company: "Motive",
     location: "Pakistan",
     period: "Jun 2022 – Sep 2022",
@@ -50,8 +52,8 @@ export const experience: Experience[] = [
     ],
   },
   {
-    role: "Teaching Assistant — Data Structures",
-    company: "NUCES",
+    role: "Teaching Assistant, Data Structures",
+    company: "National University of Computer and Emerging Sciences (FAST)",
     location: "Karachi, Pakistan",
     period: "Aug 2022 – Jan 2023",
     disciplines: [],
