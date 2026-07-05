@@ -1,0 +1,38 @@
+export const frontmatter = {
+  title: "Dense Video Captioning",
+  slug: "dense-video-captioning",
+  period: "Aug 2022 – May 2023",
+  summary:
+    "End-to-end pipeline that generates timestamped captions for long-form video using a transformer sequence-to-sequence model with temporal attention.",
+  disciplines: ["ML"],
+  tech: ["PyTorch", "OpenCV", "Transformers", "NLP", "CV"],
+  cover: "/projects/video-captioning.jpg",
+  links: [
+    {
+      label: "Report (PDF)",
+      url: "https://drive.google.com/file/d/1iec2yEQamZNrXkJvvRBdMjsCwa3jfwzq/view?usp=sharing",
+    },
+  ],
+};
+
+## Problem
+
+Long-form video is hard to index, search, and make accessible. Existing captioning models tend to produce either single global captions or dense captions without meaningful temporal grounding.
+
+## Approach
+
+- OpenCV for frame extraction and temporal segmentation.
+- A transformer-based seq2seq model in PyTorch, trained end-to-end to emit timestamp-anchored caption sequences.
+- Temporal attention layer to focus on relevant segments rather than averaging across the whole clip.
+- Training pipeline handled preprocessing, alignment, and evaluation across a large video dataset.
+
+## Impact
+
+- BLEU score up **12%** vs. the baseline captioning model.
+- Timestamp-anchored output made the captions usable for automated indexing, summarization, and accessibility use cases.
+
+## What I learned
+
+- Temporal modeling is fundamentally different from text-only seq2seq — alignment and segmentation choices dominate quality.
+- End-to-end pipelines for video demand careful thought about I/O bottlenecks; the model wasn't the slowest part.
+- Robust evaluation matters more than most single metric improvements suggest — BLEU alone is misleading for grounded captions.

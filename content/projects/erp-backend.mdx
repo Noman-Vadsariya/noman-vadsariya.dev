@@ -1,0 +1,48 @@
+export const frontmatter = {
+  title: "Modern ERP Backend",
+  slug: "erp-backend",
+  period: "2024",
+  summary:
+    "FastAPI + PostgreSQL ERP backend with JWT auth, RBAC, real-time inventory tracking, and order processing that keeps stock in sync automatically.",
+  disciplines: ["SWE", "Data-Eng"],
+  tech: [
+    "FastAPI",
+    "Python",
+    "SQLAlchemy",
+    "PostgreSQL",
+    "Pydantic",
+    "JWT",
+    "Docker",
+  ],
+  cover: "/projects/erp-backend.svg",
+  links: [
+    {
+      label: "GitHub",
+      url: "https://github.com/Noman-Vadsariya/ERP-Backend-Project",
+    },
+  ],
+};
+
+## What it does
+
+Backend for a small-business ERP: products, inventory, orders, users. The interesting bits are less "CRUD" and more the invariants — an order shouldn't be able to over-sell stock, inventory movements should be auditable, and role-based access should hold at the API boundary, not just the UI.
+
+## Architecture
+
+- **FastAPI** for the API surface, with Pydantic schemas doing runtime validation at the edge and OpenAPI docs generated for free.
+- **SQLAlchemy** as the ORM over **PostgreSQL**, with a schema modeling users, products, inventory records, orders, and order items.
+- **JWT** auth with **bcrypt** hashing and role-based access control enforced via FastAPI dependencies.
+- **Docker Compose** for a one-command spin-up of the API + database.
+- Swagger UI at `/api/v1/docs` for exploring endpoints.
+
+## Design decisions worth calling out
+
+- Inventory updates are **derived from orders**, not managed in parallel — the order transaction owns the stock delta, so the two can't drift.
+- **Low-stock alerts** and **movement history** are computed from the same source of truth, avoiding the classic "reports disagree with the operational view" problem.
+- RBAC lives in the dependency layer, not scattered through routes — auth checks are enforceable and testable in one place.
+
+## What I learned
+
+- Pydantic + FastAPI's dependency injection makes "auth + validation" trivially composable — feels like a huge productivity boost compared to hand-rolling middleware chains.
+- Inventory is where most naive backends acquire their first race conditions. Treating stock as *always* a function of the order log is a much sturdier default than "increment/decrement" logic.
+- Getting Docker Compose to `just work` for a new contributor is worth more than any amount of README.

@@ -1,0 +1,48 @@
+export const frontmatter = {
+  title: "Real-Time Chat Backend (Go)",
+  slug: "real-time-chat-backend",
+  period: "2024",
+  summary:
+    "Go + Gin + Gorilla WebSocket chat backend with JWT auth, persistent history, presence tracking, and a swappable SQLite / PostgreSQL store.",
+  disciplines: ["SWE"],
+  tech: [
+    "Go",
+    "Gin",
+    "Gorilla WebSocket",
+    "GORM",
+    "PostgreSQL",
+    "SQLite",
+    "JWT",
+  ],
+  cover: "/projects/real-time-chat-backend.svg",
+  links: [
+    {
+      label: "GitHub",
+      url: "https://github.com/Noman-Vadsariya/Real-Time-Chat-Backend",
+    },
+  ],
+};
+
+## What it does
+
+A production-shaped real-time chat backend in Go: JWT auth, `/ws` WebSocket endpoint for instant delivery, persistent message history, per-user online status, and REST endpoints for user list + history retrieval.
+
+## Architecture
+
+- **Go 1.16+** with the **Gin** web framework for the HTTP surface.
+- **Gorilla WebSocket** upgrades authenticated connections into a real-time channel on `/ws`, with token validation before the upgrade handshake.
+- **GORM** ORM over a **swappable SQLite / PostgreSQL** backend — SQLite for local dev, Postgres for anything real. Same models, no code changes.
+- **JWT** tokens + **bcrypt** hashing for auth. Presence and message endpoints require a valid token.
+- CORS, input sanitization, and env-configurable port for deployment flexibility.
+
+## Design decisions worth calling out
+
+- **Auth before upgrade**: WebSocket connections are validated *before* the protocol switch — an unauthenticated client never gets a live socket, avoiding a whole class of DoS-shape problems.
+- **Presence is derived state**, tracked in-process from active WS connections rather than persisted separately, so it can't lie about who's actually online.
+- **REST + WS coexist** for the same domain: history over HTTP, deltas over WS. Clients hydrate on load, subscribe to changes — the standard architecture for real-time apps, cleanly separated.
+
+## What I took away
+
+- Real-time chat is 20% messaging and 80% edge cases: reconnects, ordering, dupes, dropped writes. Getting the auth boundary and the delivery guarantee right early saves a lot of firefighting later.
+- Go's static binaries + Docker are a great combo for real-time services — fast cold starts, predictable memory, easy to deploy.
+- Building against an interface for the DB (GORM over SQLite *or* Postgres) meant local dev never blocked on a running database.

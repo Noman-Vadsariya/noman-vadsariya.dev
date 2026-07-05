@@ -1,0 +1,52 @@
+export const frontmatter = {
+  title: "Mitigating Dialect Bias in Toxicity Detection",
+  slug: "dialect-bias-toxicity",
+  period: "USC CSCI 567 · 2025",
+  summary:
+    "Reducing false-positive toxicity predictions on African-American English (AAE) while holding overall performance — via reweighting, calibration, adversarial debiasing, and abstain variants.",
+  disciplines: ["ML"],
+  tech: [
+    "PyTorch",
+    "BERT",
+    "ToxicBERT",
+    "XGBoost",
+    "Adversarial Debiasing",
+    "Fairness",
+  ],
+  cover: "/projects/dialect-bias-toxicity.svg",
+  links: [
+    {
+      label: "GitHub",
+      url: "https://github.com/Noman-Vadsariya/Mitigating-Dialect-Bias-Toxicity-Detection",
+    },
+  ],
+};
+
+## Problem
+
+Off-the-shelf toxicity classifiers (including ToxicBERT and BERT fine-tunes) fire disproportionately often on African-American English (AAE), inflating false positives for a specific dialect group. The goal was to shrink that gap on **TwitterAAE** and **HateXplain** without giving up overall accuracy.
+
+## Approach
+
+Built baselines and a spectrum of fairness-aware interventions on top of BERT embeddings:
+
+- **Baselines** — XGBoost on text embeddings, fine-tuned BERT, and pretrained ToxicBERT for reference.
+- **Reweighting** — up-weight AAE non-toxic examples to push down false positives on that group.
+- **Fairness-aware training** — joint loss combining BCE for accuracy with a **group-gap penalty** for AAE/SAE disparity, gated by a γ trade-off.
+- **Group-conditional thresholds** — different decision cut-offs per dialect at inference time.
+- **Vector scaling (VS)** on XGBoost, plus a **ternary "toxic / offensive / not-toxic"** setup with manual and auto class weights.
+- **Uncertainty band ("unsure")** — abstain around the decision boundary at 0.45–0.55, 0.40–0.60, 0.35–0.65.
+- **Adversarial debiasing** — Equalized-Odds projection with both a linear adversary on XGBoost and an MLP adversary on top of BERT embeddings, tuned over a Slurm grid search.
+
+## Evaluation
+
+- In-domain: balanced and unbalanced TwitterAAE splits.
+- Out-of-domain: trained on TwitterAAE, evaluated on **HateXplain** for generalization under covariate shift.
+- Metrics: F1, selective-F1, coverage, EO gap (FPR/FNR disparity), abstain-aware gap for the three-class variant.
+
+## What I took away
+
+- Reweighting alone shifts the AAE FPR but tends to trade it for lower overall performance — you have to combine it with calibration or an adversary to hold the accuracy line.
+- Adversarial debiasing with EO projection was the most robust: it kept working under distribution shift (TwitterAAE → HateXplain), which the simpler methods did not.
+- Abstain / "unsure" bands are underrated. Giving the model permission to defer on borderline cases cut disparate impact substantially at a modest coverage cost.
+- Fairness experiments live and die on infrastructure — the Slurm grid + aggregation scripts were as important as the model choices for getting reproducible results.

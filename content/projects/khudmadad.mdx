@@ -1,0 +1,38 @@
+export const frontmatter = {
+  title: "Khudmadad — Freelancing Platform",
+  slug: "khudmadad",
+  period: "Jan 2022 – May 2022",
+  summary:
+    "Full-stack freelancing web app with real-time messaging, role-based access, and an embeddable plugin. Adopted with 2,000+ plugin downloads.",
+  disciplines: ["SWE"],
+  tech: [".NET", "React", "PostgreSQL", "Real-time Messaging"],
+  cover: "/projects/khudmadad.png",
+  links: [
+    {
+      label: "GitHub",
+      url: "https://github.com/Noman-Vadsariya/DDR-Khudmadad",
+    },
+  ],
+};
+
+## Problem
+
+Freelancer / client marketplaces exist, but most lock work behind their platform. This project needed a marketplace *and* a way to embed the interaction surface into third-party sites.
+
+## Approach
+
+- .NET backend with secure REST APIs, role-based access, and PostgreSQL persistence.
+- React frontend with real-time messaging over WebSockets.
+- A packaged plugin that third-party sites could drop in to expose the marketplace inline.
+- CI/CD pipeline for repeatable deploys.
+
+## Impact
+
+- **2,000+ downloads** of the plugin with an average rating of **4/5**.
+- Successfully facilitated freelancer/client interactions end-to-end.
+
+## What I learned
+
+- Real-time messaging isn't hard until you introduce presence, ordering, and reconnect semantics — then it's everything.
+- Embeddable widgets force you to design boundaries early: auth, CSS isolation, versioning.
+- Full-stack ownership from schema to UI is where you catch the assumptions each layer makes about the others.

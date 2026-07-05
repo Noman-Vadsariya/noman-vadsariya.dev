@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #fafaf9;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f4f5;
+  --color-border: #e5e7eb;
+  --color-border-strong: #d4d4d8;
+  --color-fg: #0a0a0a;
+  --color-fg-muted: #52525b;
+  --color-fg-subtle: #71717a;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+
+  --color-tag-swe: #52525b;
+  --color-tag-swe-bg: #f4f4f5;
+  --color-tag-ml: #7c3aed;
+  --color-tag-ml-bg: #f5f3ff;
+  --color-tag-data: #059669;
+  --color-tag-data-bg: #ecfdf5;
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+body {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-accent) 25%, transparent);
+}

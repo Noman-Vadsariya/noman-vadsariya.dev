@@ -1,0 +1,60 @@
+export const frontmatter = {
+  title: "Doc2LoRA Hypernetwork vs. In-Context RAG",
+  slug: "d2l-vs-rag",
+  period: "USC · 2025",
+  summary:
+    "Head-to-head comparison of a Doc2LoRA hypernetwork against modern in-context RAG pipelines (ColBERT + SPLADE) on HotpotQA, ASQA, and a synthetic needle-in-a-haystack benchmark.",
+  disciplines: ["ML"],
+  tech: [
+    "PyTorch",
+    "Doc2LoRA",
+    "Hypernetworks",
+    "RAG",
+    "ColBERT",
+    "SPLADE",
+    "Qwen",
+    "Gemma",
+  ],
+  cover: "/projects/d2l-vs-rag.svg",
+  links: [
+    {
+      label: "GitHub",
+      url: "https://github.com/Noman-Vadsariya/D2L-Hypernetwork-vs-In-context-RAG",
+    },
+  ],
+};
+
+## Question
+
+Given a corpus of documents at inference time, is it better to:
+
+1. **Encode the documents into the model** via a **Doc2LoRA hypernetwork** that emits per-document LoRA adapters, or
+2. **Keep documents external** and rely on **in-context RAG** (retrieve → rerank → generate)?
+
+We benchmarked both across three regimes: **HotpotQA** (multi-hop QA), **ASQA** (long-form ambiguous QA), and a **synthetic needle-in-a-haystack** stress test.
+
+## Approach
+
+- **Data pipeline** — HuggingFace-sourced HotpotQA and ASQA, plus custom NIAH; teacher models **Qwen** and **Gemma** generate additional QA pairs used to train the hypernetwork.
+- **Hypernetwork training** — two-stage:
+  - *Stage 1* adapts the Doc2LoRA base to the target dataset.
+  - *Stage 2* applies **chunked-context fine-tuning** so the hypernetwork learns to compress long documents into LoRA weights.
+- **RAG baselines** — four configurations:
+  - End-to-end retrieval + generation.
+  - Generation-only with cached retrieval (to isolate reader quality).
+  - Gold-context (upper bound).
+  - Needle-in-a-haystack (retrieval stress test).
+- **Retrieval stack** — **ColBERT** reranker on top of a **neural SPLADE** dense/sparse retriever, evaluated at multiple top-k values.
+- **Infra** — 4× RTX A6000 for hypernetwork training and evaluation, P100s for dev; all training driven by Slurm job submission with cached retrievals in `data/retrieved/`.
+
+## Metrics
+
+Exact Match, **F1**, **ROUGE-L**, and answer containment. Final headline numbers focus on F1 and ROUGE-L.
+
+## What I took away
+
+- **Retrieval quality dominates** end-to-end scores in the in-context RAG setting — swapping SPLADE→ColBERT rerankers moved metrics more than most reader-side changes.
+- **Hypernetwork adapters excel when the corpus is stable** and inference latency matters — you pay training cost once, then avoid retrieval at inference.
+- **Needle-in-a-haystack** cleanly separated the two paradigms: retrieval-based RAG degrades sharply as noise grows; hypernetwork adapters degrade more gracefully but bottleneck on training-time coverage.
+- The gap between **gold-context** and **retrieval-based** F1 is the honest upper bound on how much better a smarter retriever can make you — a useful north star for RAG projects.
+- Reproducibility for GPU-heavy comparisons requires disciplined Slurm scripts and cached artifacts; without them, a fair A/B is basically impossible.
